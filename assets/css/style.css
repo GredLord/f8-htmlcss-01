@@ -12,6 +12,11 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+html,
+body {
+    scroll-behavior: smooth;
+}
+
 /* ============== common =========== */
 .content {
     width: 1110px;
@@ -49,10 +54,11 @@ a {
 
 /* =============== header =============== */
 .header {
-    position: relative;
-    height: 100vh;
+    position: sticky;
+    top: -26px;
     background: #E6F0FF;
     padding-top: 26px;
+    z-index: 1;
 }
 
 .nav-bar {
@@ -95,15 +101,21 @@ a {
     border-radius: 8px;
 }
 
-.hero {
-    margin-top: 130px;
+/* =============== hero info =============== */
+.hero-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    height: calc(100vh - 89.95px);
+    background: #E6F0FF;
 }
 
-.hero .info {
+.hero-wrap .info {
     width: 51%;
 }
 
-.hero .sub-title {
+.hero-wrap .sub-title {
     font-weight: 500;
     font-size: 1.8rem;
     line-height: 1.5;
@@ -111,7 +123,7 @@ a {
     color: #687690;
 }
 
-.hero .title {
+.hero-wrap .title {
     margin-top: 8px;
     font-weight: 700;
     font-size: 6.1rem;
@@ -119,7 +131,7 @@ a {
     color: #000336;
 }
 
-.hero .desc {
+.hero-wrap .desc {
     font-weight: 400;
     font-size: 1.8rem;
     line-height: 1.78;
@@ -161,10 +173,23 @@ a {
 }
 
 .client .images {
-    margin-top: 96px;
+    margin-top: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.client .images a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 91px;
+    padding: 32px 41px 23px;
+}
+
+.client .images a:hover {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
 }
 
 /* =========== Guides ========= */
@@ -608,6 +633,7 @@ a {
     align-items: center;
     width: 28px;
     height: 28px;
+    background: #F9F9F9;
     border-radius: 4px;
 }
 
